@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit, OnDestroy } from '@angular/core';
 import { NgSwitch, NgSwitchDefault, NgSwitchCase } from '@angular/common';
 import { HomeComponent } from './home/home.component';
 import { SidebarComponent } from './sidebar/sidebar.component';
@@ -11,6 +11,16 @@ import { SidebarComponent } from './sidebar/sidebar.component';
     
     imports: [NgSwitch, NgSwitchDefault, NgSwitchCase, HomeComponent, SidebarComponent]
 })
-export class AppComponent {
+export class AppComponent implements OnInit{
+
   title = 'orange';
+
+  intervalSub: any | undefined;
+
+  ngOnInit(): void {
+    this.intervalSub = setInterval(() => {
+      console.log("Online!");
+    }, 1001);
+  }
+;
 }
