@@ -20,7 +20,7 @@ export class AppComponent implements OnInit{
   ngOnInit(): void {
     this.intervalSub = setInterval(() => {
       console.log("Online!");
-    }, 1001);
+    }, 10000);
   }
 ;
 }
